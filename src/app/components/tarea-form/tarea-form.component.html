@@ -1,0 +1,42 @@
+<h2>{{ idTarea ? "Editar tarea" : "Nueva tarea" }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="guardar()">
+  <label>
+    Título
+    <input type="text" formControlName="titulo" placeholder="Ej. Preparar exposición" />
+  </label>
+
+  <label>
+    Descripción
+    <textarea formControlName="descripcion" rows="3"></textarea>
+  </label>
+
+  <label>
+    Fecha de entrega
+    <input type="date" formControlName="fechaEntrega" />
+  </label>
+
+  <label>
+    Estado
+    <select formControlName="estado">
+      <option value="pendiente">Pendiente</option>
+      <option value="en_progreso">En progreso</option>
+      <option value="completada">Completada</option>
+    </select>
+  </label>
+
+  <label>
+    Curso
+    <select formControlName="cursoId">
+      <option [value]="null">Sin curso</option>
+      @for (curso of cursos(); track curso.id) {
+        <option [value]="curso.id">{{ curso.nombre }}</option>
+      }
+    </select>
+  </label>
+
+  <div class="acciones-form">
+    <button type="submit" [disabled]="form.invalid">Guardar</button>
+    <a routerLink="/">Cancelar</a>
+  </div>
+</form>

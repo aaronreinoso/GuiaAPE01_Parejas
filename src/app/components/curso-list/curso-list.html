@@ -1,0 +1,23 @@
+<section class="toolbar">
+	<div></div>
+	<a routerLink="/cursos/nuevo" class="btn-primary">+ Nuevo curso</a>
+</section>
+
+@if (cursos().length === 0) {
+	<p class="vacio">No hay cursos para mostrar.</p>
+} @else {
+	<ul class="lista-cursos">
+		@for (curso of cursos(); track curso.id) {
+			<li class="curso-item">
+				<div class="curso-info">
+					<h3>{{ curso.nombre }}</h3>
+					
+				</div>
+				<div class="curso-acciones">
+					<a [routerLink]="['/cursos', curso.id, 'editar']">Editar</a>
+					<button (click)="eliminar(curso.id)">Eliminar</button>
+				</div>
+			</li>
+		}
+	</ul>
+}

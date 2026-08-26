@@ -1,0 +1,63 @@
+.toolbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.25rem;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+.lista-cursos {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.curso-item {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-left: 4px solid var(--color-primary);
+	border-radius: var(--radius);
+	padding: 1rem 1.25rem;
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.curso-info h3 {
+	margin: 0 0 0.3rem;
+	font-size: 1rem;
+}
+
+.id {
+	font-size: 0.78rem;
+	color: var(--color-muted);
+}
+
+.curso-acciones {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: flex-end;
+	white-space: nowrap;
+}
+
+.curso-acciones a {
+	color: var(--color-primary);
+	text-decoration: none;
+	font-size: 0.85rem;
+}
+
+.curso-acciones button {
+	background: #fff;
+	border: 1px solid var(--color-border);
+	color: #c0392b;
+	font-size: 0.78rem;
+}
+
+.vacio {
+	color: var(--color-muted);
+}

@@ -1,0 +1,29 @@
+<section class="toolbar">
+  <div class="filtros">
+    <button (click)="cambiarFiltro('todas')">Todas</button>
+    <button (click)="cambiarFiltro('pendiente')">Pendientes</button>
+    <button (click)="cambiarFiltro('en_progreso')">En progreso</button>
+    <button (click)="cambiarFiltro('completada')">Completadas</button>
+  </div>
+  <a routerLink="/tareas/nueva" class="btn-primary">+ Nueva tarea</a>
+</section>
+
+@if (tareasFiltradas().length === 0) {
+  <p class="vacio">No hay tareas para mostrar.</p>
+} @else {
+  <ul class="lista-tareas">
+    @for (tarea of tareasFiltradas(); track tarea.id) {
+      <li class="tarea-item" [class]="'estado-' + tarea.estado">
+        <div class="tarea-info">
+          <h3>{{ tarea.titulo }}</h3>
+          <p>{{ tarea.descripcion }}</p>
+          <span class="fecha">Entrega: {{ tarea.fechaEntrega }}</span>
+        </div>
+        <div class="tarea-acciones">
+          <a [routerLink]="['/tareas', tarea.id, 'editar']">Editar</a>
+          <button (click)="eliminar(tarea.id)">Eliminar</button>
+        </div>
+      </li>
+    }
+  </ul>
+}
