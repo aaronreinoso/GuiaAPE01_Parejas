@@ -1,12 +1,12 @@
 {
   "tareas": [
     {
-      "id": "1",
-      "titulo": "Investigar arquitectura cliente-servidor",
+      "titulo": "Investigar arquitectura cliente-servidor ",
       "descripcion": "Leer el material de la clase y preparar un resumen de una página.",
       "fechaEntrega": "2026-08-20",
       "estado": "pendiente",
-      "cursoId": 1
+      "cursoId": 1,
+      "id": "1"
     },
     {
       "id": "2",
