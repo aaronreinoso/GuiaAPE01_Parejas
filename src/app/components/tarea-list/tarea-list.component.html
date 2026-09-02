@@ -8,6 +8,11 @@
   <a routerLink="/tareas/nueva" class="btn-primary">+ Nueva tarea</a>
 </section>
 
+@if (error()) {
+  <div class="alert-error" role="alert">
+    {{ error() }}
+  </div>
+}
 @if (tareasFiltradas().length === 0) {
   <p class="vacio">No hay tareas para mostrar.</p>
 } @else {
@@ -17,6 +22,11 @@
         <div class="tarea-info">
           <h3>{{ tarea.titulo }}</h3>
           <p>{{ tarea.descripcion }}</p>
+          <p class="card-text">
+            <small class="text-muted"
+              >Curso: {{ obtenerNombreCurso(tarea.cursoId!) }}</small
+            >
+          </p>
           <span class="fecha">Entrega: {{ tarea.fechaEntrega }}</span>
         </div>
         <div class="tarea-acciones">
